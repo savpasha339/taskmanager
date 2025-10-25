@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Перенаправляем все запросы на index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Защита от просмотра файлов
+<Files "*.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "index.php">
+    Order Allow,Deny
+    Allow from all
+</Files>
