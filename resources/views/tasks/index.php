@@ -45,28 +45,28 @@ if (isset($tasks) && is_array($tasks)) {
     <!-- Графики -->
     <div class="charts-grid">
         <div class="chart-card">
-            <div class="chart-title">📊 Статусы задач</div>
+            <div class="chart-title"> Статусы задач</div>
             <div class="chart-container">
                 <canvas id="statusChart"></canvas>
             </div>
         </div>
 
         <div class="chart-card">
-            <div class="chart-title">🎯 Приоритеты задач</div>
+            <div class="chart-title"> Приоритеты задач</div>
             <div class="chart-container">
                 <canvas id="priorityChart"></canvas>
             </div>
         </div>
 
         <div class="chart-card">
-            <div class="chart-title">📈 Прогресс выполнения</div>
+            <div class="chart-title"> Прогресс выполнения</div>
             <div class="chart-container">
                 <canvas id="progressChart"></canvas>
             </div>
         </div>
 
         <div class="chart-card">
-            <div class="chart-title">📅 Задачи по неделям</div>
+            <div class="chart-title"> Задачи по неделям</div>
             <div class="chart-container">
                 <canvas id="timelineChart"></canvas>
             </div>
@@ -76,13 +76,13 @@ if (isset($tasks) && is_array($tasks)) {
 
     <!-- Заголовок и кнопка -->
     <div class="flex justify-between items-center mb-6">
-        <h1>📋 Активные задачи</h1>
+        <h1>Активные задачи</h1>
         <div class="flex gap-4">
             <a href="/tasks/history" class="btn btn-outline">
-                📚 История
+                 <span class="icon icon-history"></span>История
             </a>
             <a href="/tasks/create" class="btn ">
-                 Новая задача
+                <span class="icon icon-new"></span>Новая задача
             </a>
         </div>
     </div>
@@ -171,7 +171,7 @@ if (isset($tasks) && is_array($tasks)) {
                                             ? 'text-error' 
                                             : 'text-secondary';
                                     ?>">
-                                        📅 <?php echo date('d.m.Y', strtotime($task['due_date'])); ?>
+                                        <span class="icon icon-date"></span> <?php echo date('d.m.Y', strtotime($task['due_date'])); ?>
                                     </span>
                                 <?php else: ?>
                                     <span class="text-muted text-sm">—</span>
@@ -189,24 +189,24 @@ if (isset($tasks) && is_array($tasks)) {
                                     <?php if ($task['status'] == 'pending'): ?>
                                         <a href="/tasks/update-status?id=<?php echo $task['id']; ?>&status=completed" 
                                            class="btn btn-success btn-sm" title="Отметить выполненной">
-                                            ✅
+                                            <span class="icon icon-done"></span>
                                         </a>
                                     <?php else: ?>
                                         <a href="/tasks/update-status?id=<?php echo $task['id']; ?>&status=pending" 
                                            class="btn btn-outline btn-sm" title="Вернуть в работу">
-                                            ↩️
+                                            <span class="icon icon-back"></span>
                                         </a>
                                     <?php endif; ?>
                                     
                                     <a href="/tasks/edit?id=<?php echo $task['id']; ?>" 
                                        class="btn btn-outline btn-sm" title="Редактировать">
-                                        ✏️
+                                        <span class="icon icon-edit"></span>
                                     </a>
                                     <a href="/tasks/delete?id=<?php echo $task['id']; ?>" 
                                        class="btn btn-danger btn-sm" 
                                        onclick="return confirmDelete()"
                                        title="Удалить">
-                                        🗑️
+                                    <span class="icon icon-delete"></span>
                                     </a>
                                 </div>
                             </td>

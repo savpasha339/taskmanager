@@ -10,7 +10,7 @@ $sort_order = $_GET['order'] ?? 'DESC';
     <!-- Заголовок и навигация -->
     <div class="flex justify-between items-center mb-6">
         <div>
-            <h1>📚 История задач</h1>
+            <h1><span class="icon icon-history"></span> История задач</h1>
             <p class="text-secondary mt-2">Выполненные и архивные задачи</p>
         </div>
         <div class="flex gap-4">
@@ -68,8 +68,8 @@ $sort_order = $_GET['order'] ?? 'DESC';
                 <div class="empty-state-icon">📚</div>
                 <h3 class="text-primary mb-2">История пуста</h3>
                 <p class="text-secondary mb-6">Здесь появятся выполненные задачи</p>
-                <a href="/tasks" class="btn btn-primary">
-                    📋 Перейти к активным задачам
+                <a href="/tasks" class="btn">
+                Перейти к активным задачам
                 </a>
             </div>
         <?php else: ?>
@@ -119,7 +119,7 @@ $sort_order = $_GET['order'] ?? 'DESC';
                             <td>
                                 <?php if ($task['due_date'] && $task['due_date'] != '0000-00-00'): ?>
                                     <span class="text-sm text-secondary">
-                                        📅 <?php echo date('d.m.Y', strtotime($task['due_date'])); ?>
+                                        <span class="icon icon-date"></span> <?php echo date('d.m.Y', strtotime($task['due_date'])); ?>
                                     </span>
                                 <?php else: ?>
                                     <span class="text-muted text-sm">—</span>
@@ -127,24 +127,24 @@ $sort_order = $_GET['order'] ?? 'DESC';
                             </td>
                             <td>
                                 <span class="text-sm text-secondary">
-                                    ⏰ <?php echo date('d.m.Y H:i', strtotime($task['updated_at'])); ?>
+                                    <span class="icon icon-time"></span><?php echo date('d.m.Y H:i', strtotime($task['updated_at'])); ?>
                                 </span>
                             </td>
                             <td>
                                 <div class="actions">
                                     <a href="/tasks/update-status?id=<?php echo $task['id']; ?>&status=pending" 
                                        class="btn btn-outline btn-sm" title="Вернуть в работу">
-                                        ↩️
+                                        <span class="icon icon-back"></span>
                                     </a>
                                     <a href="/tasks/edit?id=<?php echo $task['id']; ?>" 
                                        class="btn btn-outline btn-sm" title="Редактировать">
-                                        ✏️
+                                        <span class="icon icon-edit"></span>
                                     </a>
                                     <a href="/tasks/delete?id=<?php echo $task['id']; ?>" 
                                        class="btn btn-danger btn-sm" 
                                        onclick="return confirmDelete()"
                                        title="Удалить">
-                                        🗑️
+                                        <span class="icon icon-delete"></span>
                                     </a>
                                 </div>
                             </td>

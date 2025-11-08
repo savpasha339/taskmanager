@@ -49,7 +49,7 @@
                     <a href="/tasks" class="<?php echo $_SERVER['REQUEST_URI'] == '/tasks' ? 'active' : ''; ?>">Активные</a>
                     <a href="/tasks/history" class="<?php echo $_SERVER['REQUEST_URI'] == '/tasks/history' ? 'active' : ''; ?>">История</a>
                     <a href="/tasks/create" class="<?php echo $_SERVER['REQUEST_URI'] == '/tasks/create' ? 'active' : ''; ?>">Новая</a>
-                    <a href="/logout" class="btn btn-outline btn-sm">🚪 Выйти</a>
+                    <a href="/logout" class="btn btn-outline btn-sm">Выйти</a>
                 <?php else: ?>
                     <a href="/login" class="<?php echo $_SERVER['REQUEST_URI'] == '/login' ? 'active' : ''; ?>">Войти</a>
                     <a href="/register" class="<?php echo $_SERVER['REQUEST_URI'] == '/register' ? 'active' : ''; ?>">Регистрация</a>

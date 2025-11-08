@@ -249,7 +249,7 @@ h2 {
 }
 
 .btn-sm {
-    padding: var(--space-2) var(--space-4);
+    
     font-size: var(--font-size-xs);
 }
 
@@ -749,4 +749,73 @@ textarea:focus-visible {
     background: rgba(16, 185, 129, 0.1);
     color: var(--success);
     border: 1px solid rgba(16, 185, 129, 0.2);
+}
+/* Иконки */
+.icon {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    vertical-align: middle;
+    filter: invert(1); /* Делает черные иконки белыми */
+}
+
+
+
+.icon-sm {
+    width: 30px;
+    height: 30px;
+}
+
+.icon-lg {
+    width: 35px;
+    height: 35px;
+}
+
+/* Иконки действий */
+.icon-edit { background-image: url('/assets/icons/edit.png'); }
+.icon-delete { background-image: url('/assets/icons/delete.png'); }
+.icon-done { background-image: url('/assets/icons/done.png'); }
+.icon-history { background-image: url('/assets/icons/history.png'); }
+.icon-new { background-image: url('/assets/icons/unlock.png'); 
+    width: 45px;
+    height: 45px;
+}
+.icon-task { background-image: url('/assets/icons/man.png'); }
+.icon-back { background-image: url('/assets/icons/back.png'); }
+.icon-date { background-image: url('/assets/icons/date.png'); }
+.icon-time { background-image: url('/assets/icons/date-time.png'); }
+
+
+
+/* Кнопки с иконками */
+.btn-with-icon {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Все заголовки таблицы по правому краю */
+.table th {
+    text-align: center;
+}
+
+.table th:first-child {
+    text-align: center;   
+}
+
+.table td {
+    text-align: center;
+}
+
+.table td:first-child {
+    text-align: center;
 }

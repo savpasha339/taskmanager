@@ -8,8 +8,7 @@
                 <div class="footer-section">
                     <div class="logo">TaskManager</div>
                     <p class="footer-text">
-                        Простая и эффективная система управления задачами<br>
-                        Разработано на PHP с современным дизайном
+                        Простая и эффективная система управления задачами.<br>
                     </p>
                 </div>
                 <div class="footer-section">
@@ -32,7 +31,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TaskManager. Все права защищены.</p>
+                <p>&copy; 2025 TaskManager. Все права могут быть украдены.</p>
                 <div class="footer-tech">
                     <span class="tech-badge">PHP</span>
                     <span class="tech-badge">MySQL</span>
