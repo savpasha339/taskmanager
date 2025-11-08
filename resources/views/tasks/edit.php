@@ -28,6 +28,12 @@ if (!isset($task)) {
                     <textarea id="description" name="description" class="form-control" 
                               rows="4" placeholder="Опишите детали задачи..."><?php echo htmlspecialchars($task['description']); ?></textarea>
                 </div>
+
+                <div class="form-group">
+                    <label for="comment" class="form-label">Комментарий</label>
+                    <textarea id="comment" name="comment" class="form-control" 
+                              rows="2" placeholder="Добавьте комментарий к задаче..."><?php echo htmlspecialchars($task['comment']); ?></textarea>
+                </div>
                 
                 <div class="form-group">
                     <label for="status" class="form-label">Статус</label>
@@ -49,12 +55,12 @@ if (!isset($task)) {
                 <div class="form-group">
                     <label for="due_date" class="form-label">Срок выполнения</label>
                     <input type="date" id="due_date" name="due_date" class="form-control"
-                           value="<?php echo $task['due_date'] ? date('Y-m-d', strtotime($task['due_date'])) : ''; ?>">
+                           value="<?php echo $task['due_date'] && $task['due_date'] != '0000-00-00' ? date('Y-m-d', strtotime($task['due_date'])) : ''; ?>">
                 </div>
                 
                 <div class="flex gap-4">
                     <a href="/tasks" class="btn btn-outline w-full">← Отмена</a>
-                    <button type="submit" class="btn btn-primary w-full">💾 Сохранить изменения</button>
+                    <button type="submit" class="btn w-full">Сохранить изменения</button>
                 </div>
             </form>
         </div>

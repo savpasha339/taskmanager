@@ -22,6 +22,13 @@ include $root_path . '/resources/views/layout/header.php';
                     <textarea id="description" name="description" class="form-control" 
                               rows="4" placeholder="Опишите детали задачи..."><?php echo $_POST['description'] ?? ''; ?></textarea>
                 </div>
+
+                <div class="form-group">
+                    <label for="comment" class="form-label">Комментарий (после выполнения)</label>
+                    <textarea id="comment" name="comment" class="form-control" 
+                              rows="2" placeholder="Комментарий появится после завершения задачи..."><?php echo $_POST['comment'] ?? ''; ?></textarea>
+                    <p class="text-sm text-muted mt-1">Это поле можно заполнить после выполнения задачи</p>
+                </div>
                 
                 <div class="form-group">
                     <label for="priority" class="form-label">Приоритет</label>
@@ -36,12 +43,12 @@ include $root_path . '/resources/views/layout/header.php';
                     <label for="due_date" class="form-label">Срок выполнения</label>
                     <input type="date" id="due_date" name="due_date" class="form-control"
                            value="<?php echo $_POST['due_date'] ?? ''; ?>">
-                    <p class="text-sm text-gray-500 mt-1">Оставьте пустым если срок не установлен</p>
+                    <p class="text-sm text-muted mt-1">Оставьте пустым если срок не установлен</p>
                 </div>
                 
                 <div class="flex gap-4">
                     <a href="/tasks" class="btn btn-outline w-full">← Назад к списку</a>
-                    <button type="submit" class="btn w-full">Создать задачу</button>
+                    <button type="submit" class="btn w-full"> Создать задачу</button>
                 </div>
             </form>
         </div>
